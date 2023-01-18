@@ -75,4 +75,33 @@ export default class Calculator {
     this.secondaryOperand = this.primaryOperand;
     this.primaryOperand = 0;
   }
+
+  evaluate() {
+    let result;
+    switch (this.operation) {
+      case "*":
+        result = this.secondaryOperand * this.primaryOperand;
+        break;
+      case "÷":
+        result = this.secondaryOperand / this.primaryOperand;
+        break;
+      case "+":
+        result = this.secondaryOperand + this.primaryOperand;
+        break;
+      case "-":
+        result = this.secondaryOperand - this.primaryOperand;
+        break;
+      default:
+        return;
+    }
+
+    this.clear();
+    this.primaryOperand = result;
+
+    return result;
+  }
+
+  signChange() {
+    this.primaryOperand = this.primaryOperand * -1;
+  }
 }
