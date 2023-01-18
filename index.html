@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body class="preload">
     <h1>Calc</h1>
     <main class="container">
       <div class="output">
@@ -20,7 +20,7 @@
         </div>
         <div id="primary-operand" class="primary-operand"></div>
       </div>
-      <button type="button" id="clear" class="clear function">AC</button>
+      <button type="button" id="clear" class="clear">AC</button>
       <button type="button" id="delete" class="function"><ion-icon name="backspace"></ion-icon></button>
       <button type="button" class="operation function">÷</button>
 
@@ -39,7 +39,7 @@
       <button type="button" class="number">3</button>
       <button type="button" class="operation function">+</button>
 
-      <button type="button" class="plus-minus">+/-</button>
+      <button type="button" id="plus-minus">+/-</button>
       <button type="button" class="number">.</button>
       <button type="button" class="number">0</button>
       <button type="button" id="equals" class="equals">=</button>
