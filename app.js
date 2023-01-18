@@ -5,6 +5,7 @@ const secondaryOperandEl = document.querySelector("#secondary-operand");
 const operationEl = document.querySelector("#operation-display");
 
 const calculator = new Calculator(primaryOperandEl, secondaryOperandEl, operationEl);
+let lastActionState = "";
 
 window.addEventListener("load", () => {
   document.body.classList.remove("preload");
@@ -15,7 +16,7 @@ window.addEventListener("click", (e) => {
     calculator.clear();
   }
 
-  if (e.target.matches("#delete")) {
+  if (e.target.matches("#delete") || e.target.matches("[name=backspace]")) {
     calculator.removeDigit();
   }
 
@@ -28,7 +29,7 @@ window.addEventListener("click", (e) => {
   }
 
   if (e.target.matches(".operation")) {
-    calculator.chooseOperation(e.target.textContent);
+    calculator.selectOperation(e.target.textContent);
   }
 
   if (e.target.matches("#plus-minus")) {

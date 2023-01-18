@@ -17,9 +17,17 @@ export default class Calculator {
     this.primaryOperandEl.textContent = displayNum(value);
   }
 
+  get secondaryOperand() {
+    return parseFloat(this.secondaryOperandEl.dataset.value);
+  }
+
   set secondaryOperand(value) {
     this.secondaryOperandEl.dataset.value = value ?? "";
     this.secondaryOperandEl.textContent = displayNum(value);
+  }
+
+  get operation() {
+    return this.operationEl.textContent;
   }
 
   set operation(value) {
@@ -43,5 +51,24 @@ export default class Calculator {
     }
 
     this.primaryOperand = this.primaryOperandEl.dataset.value + digit;
+  }
+
+  removeDigit() {
+    const numStr = this.primaryOperandEl.dataset.value;
+
+    if (numStr.length <= 1) {
+      this.primaryOperand = 0;
+      return;
+    }
+
+    this.primaryOperand = numStr.substring(0, numStr.length - 1);
+  }
+
+  selectOperation(operation) {
+    if (this.operation !== "") return;
+
+    this.operation = operation;
+    this.secondaryOperand = this.primaryOperand;
+    this.primaryOperand = 0;
   }
 }
