@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <h1>Calc</h1>
     <main class="container">
       <div class="output">
         <div class="history">
@@ -16,25 +20,31 @@
         </div>
         <div id="primary-operand" class="primary-operand"></div>
       </div>
-      <button type="button" id="clear" class="clear">AC</button>
-      <button type="button" id="delete">DEL</button>
-      <button type="button" class="operation">÷</button>
-      <button type="button" class="number">1</button>
-      <button type="button" class="number">2</button>
-      <button type="button" class="number">3</button>
-      <button type="button" class="operation">*</button>
-      <button type="button" class="number">4</button>
-      <button type="button" class="number">5</button>
-      <button type="button" class="number">6</button>
-      <button type="button" class="operation">+</button>
+      <button type="button" id="clear" class="clear function">AC</button>
+      <button type="button" id="delete" class="function"><ion-icon name="backspace"></ion-icon></button>
+      <button type="button" class="operation function">÷</button>
+
       <button type="button" class="number">7</button>
       <button type="button" class="number">8</button>
       <button type="button" class="number">9</button>
-      <button type="button" class="operation">-</button>
+      <button type="button" class="operation function">*</button>
+
+      <button type="button" class="number">4</button>
+      <button type="button" class="number">5</button>
+      <button type="button" class="number">6</button>
+      <button type="button" class="operation function">-</button>
+
+      <button type="button" class="number">1</button>
+      <button type="button" class="number">2</button>
+      <button type="button" class="number">3</button>
+      <button type="button" class="operation function">+</button>
+
+      <button type="button" class="plus-minus">+/-</button>
       <button type="button" class="number">.</button>
       <button type="button" class="number">0</button>
       <button type="button" id="equals" class="equals">=</button>
     </main>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
